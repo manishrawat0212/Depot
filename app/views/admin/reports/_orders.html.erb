@@ -1,0 +1,20 @@
+<div id='orders'>
+  <p>Orders placed from <b><%= @from %></b> to <b><%= @to %></b></p>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Payment Type</th>
+      <th>Placed At</th>
+    </tr>
+    <% Order.by_date(@from, @to).each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.address %></td>
+        <td><%= order.pay_type %></td>
+        <td><%= order.created_at %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+

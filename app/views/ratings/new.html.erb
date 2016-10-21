@@ -1,0 +1,21 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<p><b>Title</b>: <%= @product.title %></p>
+<p><b>Description</b>: <%= strip_tags(@product.description) %></p>
+<p><b>Price</b>: <%=  number_to_currency(@product.price) %></p>
+
+<p>Please rate this product.</p>
+<p>If you have already rated this product, then the previous rating will be updated!!!</p>
+
+<%= form_for @rating do |f| %>
+  <%= f.label :rate, 'Rating:' %>
+  <%= f.select :rate, options_for_select((0..5).step(0.5).to_a, "0.0") %>
+  <%= f.hidden_field :product_id, value: @product.id %>
+  <%= f.hidden_field :user_id, value: session[:user_id] %>
+  <%= f.submit 'Save' %>
+<% end %>
+
+<br>
+<%= link_to 'Back', products_path %>

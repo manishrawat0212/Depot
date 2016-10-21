@@ -1,0 +1,107 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
+      messages:
+        blank: "cannot be blank"
+        taken: "has already been taken"
+        not_a_number: "is not a number"
+      models:
+        product:
+          attributes:
+            permalink:
+              invalid: "should have minimum 3 words, separated by hyphen.
+              Space or special characters are not allowed"
+            description:
+              invalid: "should be between 5 and 10 words"
+            price:
+              greater_than: "must be greater than discount price"
+              greater_than_or_equal_to: "must be greater than 0.01"
+
+  products:
+    create:
+      notice: "Product was successfully created."
+    update:
+      notice: "Product was successfully updated."
+  
+  order_notifier:
+    received:
+      subject: "Pragmatic Store Order Confirmation"
+      dear: "Dear %{name},"
+      thank_you: "Thank you for your recent order from The Pragmatic Store."
+      details: "Following are your order details:"
+      name: "Name"
+      address: "Address"
+      email: "Email"
+      payment_type: "Payment Type"
+      placed_on: "Placed On"
+      items: "Items"
+      amount: "Total Amount"
+      images: "These are the images of your ordered products:"
+      attachments: "Also check the attachments."
+      send: "We'll send you a separate e-mail when your order ships."
+
+  layouts:
+    application:
+      title: "Pragmatic Bookshelf"
+      home: "Home"
+    myorders:
+      title: "Orders List"
+      home: "Home"
+
+  store:
+    index:
+      title_html: "Your Pragmatic Catalog"
+      add_html: "Add to Cart"
+
+  carts:
+    cart:
+      title: "Your Cart"
+      empty: "Empty cart"
+      checkout: "Checkout"
+
+  number:
+    currency:
+      format:
+        unit: "$"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%u%n"
+
+  orders:
+    new:
+      legend: "Please Enter Your Details"
+    form:
+      name: "Name"
+      address_html: "Address"
+      email: "E-mail"
+      pay_type: "Pay with"
+      pay_prompt_html: "Select a payment method"
+      submit: "Place Order"
+
+  thanks: "Thank you for your order"

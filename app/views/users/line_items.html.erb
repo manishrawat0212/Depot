@@ -1,0 +1,15 @@
+<% pageNo = 1 %>
+<% pages = (@line_items_count.to_f / @pagination_size).ceil %>
+
+<p> Total Line Items: <b><%= @line_items_count %></b> </p>
+<p> Line Items per page: <b><%= @pagination_size %></b> </p>
+<p> Total pages: <b><%= pages %></b> </p>
+
+<div id='navigators'>
+  <% while pageNo <= pages do %>
+    <%= button_to pageNo, users_show_line_items_path({pageNo: pageNo, size: @pagination_size}), remote: true %>
+    <% pageNo += 1 %>
+  <% end %>
+</div>
+
+<div id='line_items_list'></div>

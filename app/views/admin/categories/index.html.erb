@@ -1,0 +1,25 @@
+<h1>Categories List</h1>
+
+<table>
+  <tr>
+    <th>Category Name</th>
+    <th>Parent Category</th>
+    <th>Number of products</th>
+  </tr>
+  <% @categories.each do |category| %>
+    <tr>
+      <td class = 'category-name' data-type = 'Category' data-id = <%= category.id %> data-url = 'categories/show'><%= category.name %></td>
+      <td>-</td>
+      <td><%= category.count %></td>
+    </tr>
+  <% end %>
+  <% @subcategories.each do |subcategory| %>
+    <tr>
+      <td class='category-name' data-type='Subcategory' data-id = <%= subcategory.id %> data-url = 'categories/show'><%= subcategory.name %></td>
+      <td><%= Category.find(subcategory.category_id).name %></td>
+      <td><%= subcategory.count %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div id='details'></div>

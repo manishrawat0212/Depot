@@ -1,0 +1,45 @@
+hi:
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "1 त्रुटि सहेजे जाने से इस %{model} निषिद्ध"
+          other: "%{count} त्रुटियों को बचाया जा रहा से इस %{model} मॉडल निषिद्ध"
+      messages:
+        blank: "खाली नहीं किया जा सकता"
+        taken: "पहले से ही लिया जा चुका है"
+        not_a_number: "एक नंबर नहीं है"
+      models:
+        product:
+          attributes:
+            permalink:
+              invalid: "कम से कम 3 शब्द, हैफ़ेन से अलग होना चाहिए।
+              अंतरिक्ष या विशेष वर्ण की अनुमति नहीं है"
+            description:
+              invalid: "5 और 10 शब्दों के बीच होना चाहिए"
+            price:
+              greater_than: "डिस्काउंट मूल्य से अधिक होना चाहिए"
+              greater_than_or_equal_to: "0.01 से अधिक होना चाहिए"
+
+  products:
+    create:
+      notice: "उत्पाद को सफलतापूर्वक बनाया गया था।"
+    update:
+      notice: "उत्पाद को सफलतापूर्वक अद्यतन किया गया था।"
+
+  order_notifier:
+    received:
+      subject: "व्यावहारिक स्टोर आदेश पुष्टिकरण"
+      dear: "प्रिय %{name},"
+      thank_you: "व्यावहारिक स्टोर से अपने हाल के आदेश के लिए धन्यवाद।"
+      details: "बाद अपने आदेश विवरण हैं:"
+      name: "नाम"
+      address: "पता"
+      email: "ईमेल"
+      payment_type: "भुगतान के प्रकार"
+      placed_on: "उस पे रखा"
+      items: "आइटम"
+      amount: "कुल रकम"
+      images: "ये अपने आदेश दिया उत्पादों के चित्र हैं:"
+      attachments: "इसके अलावा संलग्नक जाँच"
+      send: "हम आपको एक अलग ई-मेल जब अपने आदेश जहाजों भेज देंगे।"

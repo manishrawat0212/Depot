@@ -1,0 +1,74 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t('activerecord.errors.template.header', count: @product.errors.size, model: @product.class) %></h2>    
+ 
+      <ul>
+        <% @product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= 
+      f.select(
+        :category_id, 
+        Category.all.map{ |c| [c.name, c.id, {'data-type' => 'Category'}]} + 
+        Subcategory.all.map{ |c| [c.name, c.id, {'data-type' => 'Subcategory'}]}, 
+        { prompt: 'Select One' }, { :onchange => "set_category_type()" }
+      )
+    %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :category_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, rows: 6, cols: 30, style: "resize: none" %>
+  </div>
+
+  <%= f.fields_for :images do |image| %>
+    <% unless @product.images[image.index].url.nil? %>
+      <% image_url = Rails.root.join('app', 'assets', 'images', @product.images[image.index].url) %>
+    <% end %>
+    <div class="field">
+      <% if image_url && File.file?(image_url) %>
+        <p class='details'><%= 'Update image ' %><b><%= image.index + 1 %></b> : <b><%= @product.images[image.index].url %></b></p>
+        <%= image.file_field :url, accept: 'image/png,image/gif,image/jpeg' %>
+      <% else %>
+        <%= image.label :url, 'Upload Image' %>
+        <%= image.file_field :url, accept: 'image/png,image/gif,image/jpeg' %>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.check_box :enabled %>
+    <%= f.label :enabled %><br>
+  </div>
+  <div class="field">
+    <%= f.label :discounted_price %><br>
+    <%= f.text_field :discounted_price %>
+  </div>
+  <div class="field">
+    <%= f.label :permalink %><br>
+    <%= f.text_field :permalink %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+<div id="all-categories">
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>SubCategories</th>
+    </tr>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td>
+          <% category.subcategories.each do |subcategory| %>
+            <li><%= subcategory.name %></li>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

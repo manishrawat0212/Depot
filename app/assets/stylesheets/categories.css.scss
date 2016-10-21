@@ -1,0 +1,15 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.categories{
+  #all-categories{
+    table, th, td{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    table li{
+      list-style: none;
+    }
+  }
+}

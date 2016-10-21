@@ -1,0 +1,15 @@
+<h1>Your all orders till date</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Payment Type</th>
+    <th>Placed On</th>
+    <th>Items</th>
+    <th>Total Amount</th>
+  </tr>
+  <%= render partial: "order", collection: @orders %>
+</table>
+
+<p>Grand Total: <%= number_to_currency(@total) %></p>

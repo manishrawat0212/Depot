@@ -1,0 +1,31 @@
+<h3><%= t('.dear', name: @order.name) %></h3>
+<p><%= t('.thank_you') %></p>
+<p><%= t('.details') %></p>
+
+<table>
+  <tr>
+    <th><%= t('.name') %></th>
+    <th><%= t('.address') %></th>
+    <th><%= t('.email') %></th>
+    <th><%= t('.payment_type') %></th>
+    <th><%= t('.placed_on') %></th>
+    <th><%= t('.items') %></th>
+    <th><%= t('.amount') %></th>
+  </tr>
+  <%= render partial: "users/order", object: @order %>
+</table>
+
+<p><%= t('.images') %></p>
+
+<% @order.line_items.each do |line_item| %>
+  <% line_item.product.images.each_with_index do |image, index| %>
+    <% if index == 0 %>
+      <%= image_tag attachments[image.url].url %>
+    <% else %>
+      <% attachments[image.url] %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<p><%= t('.attachments') %></p>
+<p><%= t('.send') %></p>

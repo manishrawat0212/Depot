@@ -1,0 +1,14 @@
+<% offset_value = params[:size].to_i * (params[:pageNo].to_i - 1) %>
+
+<table>
+  <tr>
+    <th>Line Item</th>
+    <th>Created At</th>
+  </tr>
+  <% User.find_by(id: session[:user_id]).line_items.limit(params[:size]).offset(offset_value).each do |line_item| %>
+    <tr>
+      <td><%= line_item.product.title %></td>
+      <td><%= line_item.created_at %></td>
+    </tr>
+  <% end %>
+</table>

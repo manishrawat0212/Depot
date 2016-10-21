@@ -1,0 +1,58 @@
+o: ActiveSupport::Cache::Entry:@valueI"=      <div class="entry">
+        adadasd
+        <img alt="Cs" src="/assets/cs.jpg" />
+        <h3>CoffeeScript</h3>
+        <p>
+        CoffeeScript is JavaScript done right. It provides all of JavaScript's
+	functionality wrapped in a cleaner, more succinct syntax. In the first
+	book on this exciting new language, CoffeeScript guru Trevor Burnham
+	shows you how to hold onto all the power and flexibility of JavaScript
+	while writing clearer, cleaner, and safer code.
+      </p>
+        <div class="price_line">
+          <span class="price">$36.00</span>
+          <form action="/line_items?locale=en&amp;product_id=1" class="button_to" data-remote="true" method="post"><div><input type="submit" value="Add to Cart" /><input name="authenticity_token" type="hidden" value="2zdxcdKYZnzQ0jRxRwcnkOUaV2gU5114YVlKn9OU9MY=" /></div></form>
+        </div>
+      </div>
+      <div class="entry">
+        adadasd
+        <img alt="Ruby" src="/assets/ruby.jpg" />
+        <h3>Programming Ruby 1.9 &amp; 2.0</h3>
+        <p>
+        Ruby is the fastest growing and most exciting dynamic language
+        out there. If you need to get working programs delivered fast,
+        you should add Ruby to your toolbox.
+      </p>
+        <div class="price_line">
+          <span class="price">$49.95</span>
+          <form action="/line_items?locale=en&amp;product_id=2" class="button_to" data-remote="true" method="post"><div><input type="submit" value="Add to Cart" /><input name="authenticity_token" type="hidden" value="2zdxcdKYZnzQ0jRxRwcnkOUaV2gU5114YVlKn9OU9MY=" /></div></form>
+        </div>
+      </div>
+      <div class="entry">
+        adadasd
+        <img alt="Rtp" src="/assets/rtp.jpg" />
+        <h3>Rails Test Prescriptions</h3>
+        <p>
+        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
+        Rails applications, covering Test-Driven Development from both a
+        theoretical perspective (why to test) and from a practical perspective
+        (how to test effectively). It covers the core Rails testing tools and
+        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
+        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+      </p>
+        <div class="price_line">
+          <span class="price">$34.95</span>
+          <form action="/line_items?locale=en&amp;product_id=3" class="button_to" data-remote="true" method="post"><div><input type="submit" value="Add to Cart" /><input name="authenticity_token" type="hidden" value="2zdxcdKYZnzQ0jRxRwcnkOUaV2gU5114YVlKn9OU9MY=" /></div></form>
+        </div>
+      </div>
+      <div class="entry">
+        adadasd
+        <img alt="Rails" src="/assets/rails.png" />
+        <h3>abc</h3>
+        <p>This product is very good!!!</p>
+        <div class="price_line">
+          <span class="price">$401.00</span>
+          <form action="/line_items?locale=en&amp;product_id=4" class="button_to" data-remote="true" method="post"><div><input type="submit" value="Add to Cart" /><input name="authenticity_token" type="hidden" value="2zdxcdKYZnzQ0jRxRwcnkOUaV2gU5114YVlKn9OU9MY=" /></div></form>
+        </div>
+      </div>
+:ET:@created_atf1476177930.3421469:@expires_in0

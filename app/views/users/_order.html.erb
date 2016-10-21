@@ -1,0 +1,17 @@
+<tr>
+  <td><%= order.name %></td>
+  <td><%= order.address %></td>
+  <td><%= order.email %></td>
+  <td><%= order.pay_type %></td>
+  <td><%= order.created_at %></td>
+  <td>
+    <ul>
+    <% amount = 0 %>
+    <% order.line_items.each do |line_item| %>
+    <% amount += line_item.product.price %>
+      <li><%= line_item.product.title %></li>
+    <% end %>
+    </ul>
+  </td>
+  <td><%= number_to_currency(amount) %></td>
+</tr>

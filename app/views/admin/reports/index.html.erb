@@ -1,0 +1,10 @@
+<h1>Orders</h1>
+
+<%= render 'orders' %>
+
+<br>
+<%= form_tag('reports/show_orders', remote: true) do %>
+  <%= date_field_tag :from, nil, placeholder: 'From' %>
+  <%= date_field_tag :to, nil, placeholder: 'To' %>
+  <%= submit_tag 'Search' %>
+<% end %>

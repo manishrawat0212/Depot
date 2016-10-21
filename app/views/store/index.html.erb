@@ -1,0 +1,45 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1><%= t('.title_html') %></h1>
+
+<% cache ['store', Product.latest] do %>
+  <% @products.each do |product| %>
+    <% cache ['entry', product] do %>
+      <div class="entry">
+        <table>
+          <tr>
+            <td class = 'product-images'>
+              <% if product.images.present? %>
+                <% product.images.each do |image| %>
+                  <%= image_tag(image.url, class: 'list_image') %>
+                <% end %>
+              <% else %>
+                <div>No image available</div>
+              <% end %>
+            </td>
+
+            <% ratings_total = product.ratings.sum(:rate) %>
+            <% if ratings_total > 0 %>
+              <% ratings_count = product.ratings.count %>
+              <% average_rating = ratings_total/ratings_count %>
+            <% else %>
+              <% average_rating = 0.0 %>
+            <% end %>
+
+            <td>
+              <h3><%= product.title %> (<%= average_rating.round(2) %>/5.0)</h3>
+              <p><%= pluralize(product.images.length, "image") %> available</p> 
+              <p><%= sanitize(product.description) %></p>
+              <div class="price_line">
+                <span class="price"><%= number_to_currency(product.price) %></span>
+                <%= button_to t('.add_html'), line_items_path(product_id: product), remote: true %>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

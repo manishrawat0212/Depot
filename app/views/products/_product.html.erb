@@ -1,0 +1,35 @@
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <% if product.images.present? %>
+    <td class = 'product-images'>
+      <% product.images.each do |image| %>
+        <%= image_tag(image.url, class: 'list_image') %>
+      <% end %>
+    </td>
+  <% else %>
+    <td>No Image Available</td>
+  <% end %>
+  
+  <% ratings_total = product.ratings.sum(:rate) %>
+  <% if ratings_total > 0 %>
+    <% ratings_count = product.ratings.count %>
+    <% average_rating = ratings_total/ratings_count %>
+  <% else %>
+    <% average_rating = 0.0 %>
+  <% end %>
+
+  <td class="list_description">
+    <dl>
+      <dt><%= product.title %> (<%= average_rating.round(2) %>/5.0)</dt>
+      <dd><%= pluralize(product.images.length, "image") %> available</dd>
+      <dd>Category: <b><%= product.category.name %></b></dd>
+      <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
+    </dl>
+  </td>
+  <td class="list_actions">
+    <%= link_to 'Show', product %><br/>
+    <%= link_to 'Edit', edit_product_path(product) %><br/>
+    <%= link_to 'Destroy', product, method: :delete, 
+                data: { confirm: 'Are you sure?' } %><br/>
+    <%= link_to 'Rate Product', new_rating_path(id: product.id) %><br/>
+  </td>
+</tr>
